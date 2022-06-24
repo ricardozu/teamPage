@@ -1,0 +1,166 @@
+/*
+1.Posicionamiento --> (static, absolute, relative, fixed).
+Modelo de caja (Box model) --> margin, border, padding, content
+Tipografía --> tipos, tamaños de fuente, etc
+Estilos visuales --> box-shadow, border-radius, gradient, etc
+Otros --> reglas CSS y más
+*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  
+    padding: 5px;
+    font-family:'Poppins', sans-serif;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header__title{
+    min-width: 200px;
+    height: 25px;
+}
+
+.header__who{
+    width: 290px ;
+    height: 150px;
+}
+
+
+
+header>h1{
+    margin: 20px 0;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.header__who h3{
+    margin: 8px 0;
+    font-size: 1.8rem;
+}
+
+.header__who p{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+main{
+    width: 100%;
+    min-height: 250px;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+.workers{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    
+}
+
+/* .container__right{
+    display: grid;
+    grid-template-rows: repeat(3, minmax(250px, 1fr));
+    grid-template-columns: repeat(1, minmax(140px, 1fr));
+    margin-top: 45px;
+    gap: 20px 0;
+} */
+
+.container__img{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(50px, 1fr)) 15px;
+    grid-template-rows: repeat(3, 1fr) 20px;
+    grid-template-areas: 
+        "img img deg"
+        "img img deg"
+        "img img deg"
+        "nam nam emp"
+    ;
+}
+
+.container__img img{
+    grid-area: img;
+    width: 100%;
+}
+
+
+.degree{
+    grid-area: deg;
+}
+
+.degree p{
+    writing-mode: vertical-rl;
+    font-size: 1rem;
+}
+
+.name{
+    grid-area: nam;
+    align-self: flex-end;
+}
+
+.name p{
+    font-size: 1.4rem;
+}
+
+footer{
+    margin-top: auto;
+    place-self: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    color: #BDBDBD;
+    font-weight: 500;
+    line-height: 17px;
+    place-self: center;
+}
+
+
+
+
+
+/*
+.container__img{
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(3 , 1fr);
+    object-fit: contain;
+    overflow: hidden;
+}
+
+
+.container__img img{
+    grid-column: 1 / 3;
+    grid-row: 1 / 5;
+    width: 100%;
+}
+
+.container__img .vertical{
+    grid-column: 3 / 4;
+    grid-row: 1 / 3 ;
+    writing-mode: vertical-lr;
+    font-size: 1.3rem;
+    font-family: 'PT Serif', serif;
+}
+
+.container__img .name{
+    justify-self: flex-start;
+    grid-column: 1 / 3;
+    grid-row: 4  / 5;
+}
+
+*/
+
